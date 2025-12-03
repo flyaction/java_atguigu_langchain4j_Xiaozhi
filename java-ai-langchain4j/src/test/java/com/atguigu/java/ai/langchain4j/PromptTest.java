@@ -31,7 +31,7 @@ public class PromptTest {
         System.out.println(answer1);
         String answer2 = memoryChatAssistant.chat("我18了");
         System.out.println(answer2);
-        String answer3 = memoryChatAssistant.chat("你知道我是谁吗");
+        String answer3 = memoryChatAssistant.chat("你知道我是谁吗,多大了");
         System.out.println(answer3);
 
     }
