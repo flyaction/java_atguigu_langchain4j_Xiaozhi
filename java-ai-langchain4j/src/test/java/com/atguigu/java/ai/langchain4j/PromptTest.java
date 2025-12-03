@@ -33,7 +33,15 @@ public class PromptTest {
         System.out.println(answer2);
         String answer3 = memoryChatAssistant.chat("你知道我是谁吗,多大了");
         System.out.println(answer3);
+    }
 
+
+    @Test
+    public void testV() {
+        String answer1 = separateChatAssistant.chat2(1, "我是环环");
+        System.out.println(answer1);
+        String answer2 = separateChatAssistant.chat2(1, "我是谁");
+        System.out.println(answer2);
     }
 
 }
