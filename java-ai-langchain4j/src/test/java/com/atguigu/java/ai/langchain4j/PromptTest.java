@@ -44,4 +44,12 @@ public class PromptTest {
         System.out.println(answer2);
     }
 
+
+    @Test
+    public void testUserInfo() {
+        String answer = separateChatAssistant.chat3(1, "我是谁，我多大了", "翠花", 18);
+        System.out.println(answer);
+    }
+
+
 }

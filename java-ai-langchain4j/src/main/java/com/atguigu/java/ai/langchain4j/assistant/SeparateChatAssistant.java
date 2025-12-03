@@ -27,4 +27,13 @@ public interface SeparateChatAssistant {
     @UserMessage("你是我的好朋友，请用粤语回答问题。{{message}}")
     String chat2(@MemoryId int memoryId, @V("message") String userMessage);
 
+
+    @SystemMessage(fromResource = "my-prompt-template3.txt")
+    String chat3(
+            @MemoryId int memoryId,
+            @UserMessage String userMessage,
+            @V("username") String username,
+            @V("age") int age
+    );
+
 }
