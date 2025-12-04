@@ -1,5 +1,6 @@
 package com.atguigu.java.ai.langchain4j.assistant;
 
+import com.atguigu.java.ai.langchain4j.tools.CalculatorTools;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
@@ -15,8 +16,8 @@ import static dev.langchain4j.service.spring.AiServiceWiringMode.EXPLICIT;
 @AiService(
         wiringMode = EXPLICIT,
         chatModel = "qwenChatModel",
-        chatMemory = "chatMemory",
-        chatMemoryProvider = "chatMemoryProvider"
+        chatMemoryProvider = "chatMemoryProvider",
+        tools = "calculatorTools"
 )
 public interface SeparateChatAssistant {
     //@SystemMessage("你是我的好朋友，请用东北话回答问题。今天是{{current_date}}")
