@@ -130,8 +130,8 @@ public class RAGTest {
         String text = "这是一个示例文本，用于测试 token 长度的计算。";
         UserMessage userMessage = UserMessage.userMessage(text);
         //计算 token 长度
-        QwenTokenizer tokenizer = new QwenTokenizer(System.getenv("DASHSCOPE_API_KEY"),"qwen-max");
-        //HuggingFaceTokenizer tokenizer = new HuggingFaceTokenizer();
+        QwenTokenizer tokenizer = new QwenTokenizer(System.getenv("DASHSCOPE_API_KEY"),"qwen-max"); //结果是15
+        //HuggingFaceTokenizer tokenizer = new HuggingFaceTokenizer();//结果是20
         int count = tokenizer.estimateTokenCountInMessage(userMessage);
         System.out.println("token长度：" + count);
     }
