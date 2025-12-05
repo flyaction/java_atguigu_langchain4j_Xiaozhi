@@ -3,6 +3,7 @@ package com.atguigu.java.ai.langchain4j;
 import dev.langchain4j.data.document.Document;
 import dev.langchain4j.data.document.loader.FileSystemDocumentLoader;
 import dev.langchain4j.data.document.parser.TextDocumentParser;
+import dev.langchain4j.data.document.parser.apache.pdfbox.ApachePdfBoxDocumentParser;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -16,10 +17,13 @@ import java.util.List;
  **/
 @SpringBootTest
 public class RAGTest {
+
+    private String filePath = "/Users/action/code/study_java/java_atguigu_langchain4j_Xiaozhi/knowledge";
+
     @Test
     public void testReadDocument() {
 
-        String filePath = "/Users/action/code/study_java/java_atguigu_langchain4j_Xiaozhi/knowledge";
+
 
         //使用FileSystemDocumentLoader读取指定目录下的知识库文档
         //并使用默认的文档解析器TextDocumentParser对文档进行解析
@@ -46,4 +50,17 @@ public class RAGTest {
         //List<Document> documents3 = FileSystemDocumentLoader.loadDocumentsRecursively(filePath, new TextDocumentParser());
 
     }
+
+    /**
+     * 解析PDF
+     */
+    @Test
+    public void testParsePDF() {
+        Document document = FileSystemDocumentLoader.loadDocument(
+                filePath+"/医院信息.pdf",
+                new ApachePdfBoxDocumentParser()
+        );
+        System.out.println(document);
+    }
+
 }
