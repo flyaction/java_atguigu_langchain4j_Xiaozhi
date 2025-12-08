@@ -119,7 +119,7 @@ const sendRequest = (message) => {
 
   axios
     .post(
-      '/api/xiaozhi/chat',
+      '/api/xiaozhi/stream',
       { memoryId: uuid.value, message },
       {
         responseType: 'stream', // 必须为合法值 "text"
